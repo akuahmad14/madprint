@@ -1,0 +1,10 @@
+appId: com.example.madprint
+---
+# Memastikan aplikasi dapat dibuka dan halaman login tampil.
+- launchApp:
+    clearState: true
+- assertVisible: "MADprint"
+- assertVisible: "Masuk"
+- assertVisible: "Email"
+- assertVisible: "Kata sandi"
+- takeScreenshot: "01_login_screen"
