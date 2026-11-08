@@ -1,0 +1,16 @@
+appId: com.example.madprint
+---
+# Jalankan setelah login Admin. Izin kamera perlu diberikan sebelumnya.
+- launchApp
+- assertVisible: "Halo, Admin"
+- tapOn: "Pesanan"
+- assertVisible: "Cari nomor SPK atau pelanggan"
+- tapOn: "Scan"
+- assertVisible: "Arahkan kamera ke QR Code pada SPK"
+- takeScreenshot: "05_scan_screen"
+- tapOn: "Profil"
+- assertVisible: "Keluar dari Akun"
+- takeScreenshot: "05_admin_profile"
+- tapOn: "Home"
+- assertVisible: "Halo, Admin"
+- takeScreenshot: "05_admin_home"
