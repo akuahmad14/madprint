@@ -1,0 +1,13 @@
+appId: com.example.madprint
+---
+# Skenario ini memerlukan sesi Admin yang sudah login.
+- launchApp
+- tapOn: "Pesanan"
+- assertVisible: "Cari nomor SPK atau pelanggan"
+- tapOn: "Pesanan baru"
+- assertVisible: "Pesanan Baru"
+- tapOn: "Buat pesanan & SPK"
+- assertVisible: "Wajib diisi"
+- assertVisible: "Harus > 0"
+- assertVisible: "Tidak valid"
+- takeScreenshot: "03_order_form_validation"
