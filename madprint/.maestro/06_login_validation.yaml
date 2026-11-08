@@ -1,0 +1,13 @@
+appId: com.example.madprint
+---
+- launchApp:
+    clearState: true
+- assertVisible: "MADprint"
+- tapOn: "Email"
+- inputText: "bukan-email"
+- tapOn: "Kata sandi"
+- inputText: "123456"
+- tapOn: "Masuk"
+- assertVisible: "Email tidak valid"
+- assertVisible: "MADprint"
+- takeScreenshot: "06_login_validation_error"
