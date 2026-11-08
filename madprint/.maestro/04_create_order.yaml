@@ -1,0 +1,26 @@
+appId: com.example.madprint
+---
+# Skenario memerlukan sesi Admin dan data uji yang unik.
+- launchApp
+- tapOn: "Pesanan"
+- tapOn: "Pesanan baru"
+- assertVisible: "Pesanan Baru"
+- tapOn: "Nama pelanggan"
+- inputText: "UAT Maestro Customer"
+- tapOn: "Nomor telepon"
+- inputText: "081234567890"
+- tapOn: "Jenis cetakan (mis. Spanduk, Brosur)"
+- inputText: "Brosur UAT"
+- tapOn: "Spesifikasi (ukuran, bahan, warna, finishing)"
+- inputText: "A4, art paper, full color"
+- tapOn: "Jumlah"
+- inputText: "100"
+- tapOn: "Harga (Rp)"
+- inputText: "250000"
+- tapOn: "Buat pesanan & SPK"
+- extendedWaitUntil:
+    visible: "Tampilkan QR"
+    timeout: 20000
+- assertVisible: "UAT Maestro Customer"
+- assertVisible: "Brosur UAT"
+- takeScreenshot: "04_order_created"
