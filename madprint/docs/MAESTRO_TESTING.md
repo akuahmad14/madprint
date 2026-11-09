@@ -78,7 +78,22 @@ Simpan bukti dengan nama yang konsisten, misalnya:
 
 Bukti harus berasal dari eksekusi nyata. Catat tanggal, perangkat, versi/build aplikasi, nama flow, hasil PASS/FAIL, dan catatan error. Jangan membuat atau mengisi bukti seolah-olah flow sudah dijalankan.
 
-## 7. Troubleshooting
+## 7. Hasil Pelaksanaan
+
+Berdasarkan konfirmasi penguji, seluruh enam flow pada tabel bagian 2 telah berhasil dieksekusi melalui Maestro Studio Desktop.
+
+| Flow | Hasil yang dilaporkan |
+|---|---|
+| `01_launch_login.yaml` | PASS |
+| `02_login_admin.yaml` | PASS |
+| `03_order_form_validation.yaml` | PASS |
+| `04_create_order.yaml` | PASS |
+| `05_navigation_admin.yaml` | PASS |
+| `06_login_validation.yaml` | PASS |
+
+**Rekapitulasi: 6 PASS, 0 FAIL.** Lampirkan screenshot/log aktual dari Maestro Studio untuk setiap flow pada `madprint/docs/evidence/`. Lengkapi tanggal pengujian, perangkat, dan versi aplikasi. Nama bukti pada tabel bagian 6 merupakan contoh penamaan, bukan file bukti yang otomatis dibuat oleh dokumen ini.
+
+## 8. Troubleshooting
 
 **Perangkat tidak muncul di Studio**
 - Periksa kabel data dan pilih mode transfer data jika diperlukan.
@@ -101,6 +116,6 @@ Bukti harus berasal dari eksekusi nyata. Catat tanggal, perangkat, versi/build a
 - Periksa apakah data uji sebelumnya masih tersimpan atau terjadi duplikasi.
 - Hanya gunakan data dummy.
 
-## 8. Batasan
+## 9. Batasan
 
 Flow dan assertion dalam repository merupakan skenario otomatisasi yang disiapkan berdasarkan source code. Kesesuaian selector, dukungan variable pada versi Studio, dan hasil eksekusi akhir tetap harus diverifikasi pada perangkat yang digunakan. Dokumen ini tidak menyatakan semua flow lulus sebelum bukti eksekusi tersedia.
