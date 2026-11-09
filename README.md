@@ -92,7 +92,7 @@ madprint/
 
 1. Buat atau gunakan proyek Supabase.
 2. Buka **SQL Editor** pada dashboard Supabase.
-3. Jalankan isi file `madprint/supabase/schema.sql untuk menyiapkan tabel, kebijakan akses, trigger, dan fungsi database yang dibutuhkan aplikasi.
+3. Jalankan isi file `madprint/supabase/schema.sql` untuk menyiapkan tabel, kebijakan akses, trigger, dan fungsi database yang dibutuhkan aplikasi.
 4. Siapkan akun pengujian melalui Supabase Authentication dan pastikan profil serta perannya sesuai skenario.
 5. Siapkan URL proyek dan **publishable/anon key** untuk konfigurasi aplikasi. Jangan gunakan atau memasukkan `service_role key` ke aplikasi, file konfigurasi yang di-commit, screenshot, maupun repository.
 
@@ -142,43 +142,31 @@ Flow Maestro disimpan pada `madprint/.maestro/`. Enam flow yang tersedia mencaku
 
 ### Menjalankan flow
 
-Instal Maestro CLI, aktifkan USB debugging pada perangkat Android, lalu pastikan perangkat terdeteksi:
+Gunakan **Maestro Studio Desktop** (bukan Maestro Studio Desktop) untuk membuka dan menjalankan flow YAML. Flow berada di folder `madprint/.maestro/`.
 
-```powershell
-adb devices
-maestro --version
-```
+#### Persiapan perangkat
 
-Jalankan perintah dari direktori `madprint/`:
+1. Aktifkan **Developer options** dan **USB debugging** pada ponsel Android.
+2. Hubungkan ponsel ke komputer menggunakan kabel data dan izinkan USB debugging pada layar ponsel.
+3. Pastikan Android SDK Platform-Tools tersedia. Studio memakai ADB untuk menemukan perangkat.
+4. Buka Maestro Studio Desktop.
+5. Buka workspace/folder flow `madprint/.maestro/` (atau folder proyek `madprint/`, lalu pilih flow di dalam `.maestro`, sesuai versi Studio).
+6. Pilih perangkat Android yang terhubung pada daftar device di Studio.
 
-```powershell
-maestro test .maestro/01_launch_login.yaml
-```
+Jika perangkat tidak muncul, tutup aplikasi lain yang mengelola ADB, periksa kabel dan izin USB debugging, lalu buka kembali Studio. Jangan menjalankan `adb kill-server` ketika Studio sedang memakai perangkat.
 
-Untuk perangkat tertentu, gunakan serial perangkat:
+#### Menjalankan flow di Studio
 
-```powershell
-maestro --device SERIAL_PERANGKAT test .maestro/01_launch_login.yaml
-```
+1. Pilih file YAML yang ingin diuji pada panel workspace.
+2. Periksa isi flow dan pastikan `appId: com.example.madprint` sesuai dengan aplikasi yang terpasang.
+3. Tekan tombol **Run/Play** pada flow di Maestro Studio.
+4. Amati interaksi pada perangkat dan hasil setiap perintah/assertion pada panel hasil Studio.
+5. Ulangi untuk flow lainnya. Jalankan flow login sebelum flow yang membutuhkan sesi Admin; jika flow memulai ulang aplikasi atau membersihkan state, lakukan login kembali.
+6. Simpan screenshot, log, atau rekaman yang disediakan Studio ke `madprint/docs/evidence/`. Nama bukti harus sesuai ID skenario.
 
-Flow login Admin menggunakan variabel lingkungan lokal. Isi dengan akun khusus pengujian, lalu jalankan flow:
+Flow login menggunakan variabel lokal `MAESTRO_EMAIL` dan `MAESTRO_PASSWORD`. Masukkan nilainya melalui mekanisme environment/secrets lokal yang didukung versi Maestro Studio yang digunakan. Jangan mengganti variabel dengan password literal dan jangan commit kredensial. Jika versi Studio yang dipakai tidak mendukung environment variable pada flow, siapkan mekanisme lokal yang aman sebelum menjalankan flow login; jangan mengunggah file rahasia.
 
-```powershell
-$env:MAESTRO_EMAIL = "EMAIL_ADMIN_PENGUJIAN"
-$env:MAESTRO_PASSWORD = "PASSWORD_ADMIN_PENGUJIAN"
-maestro --device SERIAL_PERANGKAT test .maestro/02_login_admin.yaml
-```
-
-Jalankan flow lainnya dengan pola yang sama:
-
-```powershell
-maestro --device SERIAL_PERANGKAT test .maestro/03_order_form_validation.yaml
-maestro --device SERIAL_PERANGKAT test .maestro/04_create_order.yaml
-maestro --device SERIAL_PERANGKAT test .maestro/05_navigation_admin.yaml
-maestro --device SERIAL_PERANGKAT test .maestro/06_login_validation.yaml
-```
-
-**Catatan:** flow validasi form, pembuatan pesanan, dan navigasi memerlukan kondisi sesi/peran yang sesuai. Periksa prasyarat pada `madprint/docs/MAESTRO_TESTING.md`. Selector teks harus disesuaikan dengan tampilan aktual aplikasi. Jangan menyatakan flow berhasil sebelum hasil eksekusi menunjukkan sukses.
+**Penting:** Studio adalah alat eksekusi yang dipakai pada tugas ini. ADB hanya menjadi prasyarat koneksi perangkat, bukan metode menjalankan skenario. Jangan menandai flow PASS sebelum Studio menyelesaikan seluruh assertion tanpa error.
 
 ## 6. User Acceptance Testing (UAT)
 
