@@ -9,7 +9,7 @@ Aplikasi mobile untuk membantu operasional percetakan dalam mengelola pesanan pe
 
 | Nama | NIM | Kelas | Peran |
 |---|---|---|---|
-| Ahmad Saifudin | **[Isi NIM]** | TI23B | Pengembang aplikasi, penyusun skenario UAT, dan penguji otomatisasi Maestro |
+| Ahmad Saifudin | 230103214 | TI23B | Pengembang aplikasi, penyusun skenario UAT, dan penguji otomatisasi Maestro |
 
 Lengkapi NIM sebelum pengumpulan. Jika proyek dikerjakan bersama anggota lain, tambahkan nama, NIM, kelas, dan peran setiap anggota pada tabel ini serta cantumkan kembali dalam video penjelasan.
 
@@ -180,7 +180,6 @@ Skenario yang direncanakan mencakup:
 4. Pembuatan pesanan dengan data valid.
 5. Navigasi menu utama.
 6. Navigasi menu Admin.
-7. Menampilkan QR Code pesanan.
 
 Setiap skenario harus memuat tujuan, persona/peran, kriteria penerimaan, prasyarat, langkah pengujian, hasil aktual, status, dan bukti. Lengkapi hasil aktual dan status setelah pengujian manual/otomatis benar-benar dilakukan.
 

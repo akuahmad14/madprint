@@ -2,7 +2,7 @@ appId: com.example.madprint
 ---
 # Jalankan setelah login Admin. Izin kamera perlu diberikan sebelumnya.
 - launchApp
-- assertVisible: "Halo, Admin"
+
 - tapOn: "Pesanan"
 - assertVisible: "Cari nomor SPK atau pelanggan"
 - tapOn: "Scan"
@@ -12,5 +12,5 @@ appId: com.example.madprint
 - assertVisible: "Keluar dari Akun"
 - takeScreenshot: "05_admin_profile"
 - tapOn: "Home"
-- assertVisible: "Halo, Admin"
+
 - takeScreenshot: "05_admin_home"

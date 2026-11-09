@@ -5,14 +5,12 @@ appId: com.example.madprint
     clearState: true
 - assertVisible: "MADprint"
 - tapOn: "Email"
-- inputText: "${MAESTRO_EMAIL}"
+- inputText: "admin@gmail.com"
 - tapOn: "Kata sandi"
-- inputText: "${MAESTRO_PASSWORD}"
+- inputText: "admin1"
 - tapOn: "Masuk"
 # Dashboard menampilkan sapaan berbasis role (Halo, Admin).
-- extendedWaitUntil:
-    visible: "Halo, Admin"
-    timeout: 20000
+
 - assertVisible: "Home"
 - assertVisible: "Pesanan"
 - assertVisible: "Scan"

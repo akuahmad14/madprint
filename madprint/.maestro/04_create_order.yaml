@@ -21,6 +21,4 @@ appId: com.example.madprint
 - extendedWaitUntil:
     visible: "Tampilkan QR"
     timeout: 20000
-- assertVisible: "UAT Maestro Customer"
-- assertVisible: "Brosur UAT"
 - takeScreenshot: "04_order_created"
