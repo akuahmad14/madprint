@@ -10,7 +10,9 @@ appId: com.example.madprint
 - inputText: "admin1"
 - tapOn: "Masuk"
 # Dashboard menampilkan sapaan berbasis role (Halo, Admin).
-
+- extendedWaitUntil:
+    visible: "pesanan"
+    timeout: 20000
 - assertVisible: "Home"
 - assertVisible: "Pesanan"
 - assertVisible: "Scan"

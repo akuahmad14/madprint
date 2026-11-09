@@ -162,7 +162,7 @@ Jika perangkat tidak muncul, tutup aplikasi lain yang mengelola ADB, periksa kab
 3. Tekan tombol **Run/Play** pada flow di Maestro Studio.
 4. Amati interaksi pada perangkat dan hasil setiap perintah/assertion pada panel hasil Studio.
 5. Ulangi untuk flow lainnya. Jalankan flow login sebelum flow yang membutuhkan sesi Admin; jika flow memulai ulang aplikasi atau membersihkan state, lakukan login kembali.
-6. Simpan screenshot, log, atau rekaman yang disediakan Studio ke `madprint/docs/evidence/`. Nama bukti harus sesuai ID skenario.
+6. Simpan screenshot, log, atau rekaman yang disediakan Studio ke `madprint/docs/evidence/bukti_Maestro`.
 
 Flow login menggunakan variabel lokal `MAESTRO_EMAIL` dan `MAESTRO_PASSWORD`. Masukkan nilainya melalui mekanisme environment/secrets lokal yang didukung versi Maestro Studio yang digunakan. Jangan mengganti variabel dengan password literal dan jangan commit kredensial. Jika versi Studio yang dipakai tidak mendukung environment variable pada flow, siapkan mekanisme lokal yang aman sebelum menjalankan flow login; jangan mengunggah file rahasia.
 

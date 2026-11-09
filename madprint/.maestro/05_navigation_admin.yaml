@@ -12,5 +12,5 @@ appId: com.example.madprint
 - assertVisible: "Keluar dari Akun"
 - takeScreenshot: "05_admin_profile"
 - tapOn: "Home"
-
+- assertVisible: "pesanan"
 - takeScreenshot: "05_admin_home"
