@@ -179,7 +179,8 @@ Skenario yang direncanakan mencakup:
 3. Validasi form pesanan kosong.
 4. Pembuatan pesanan dengan data valid.
 5. Navigasi menu utama.
-6. Menampilkan QR Code pesanan.
+6. Navigasi menu Admin.
+7. Menampilkan QR Code pesanan.
 
 Setiap skenario harus memuat tujuan, persona/peran, kriteria penerimaan, prasyarat, langkah pengujian, hasil aktual, status, dan bukti. Lengkapi hasil aktual dan status setelah pengujian manual/otomatis benar-benar dilakukan.
 
