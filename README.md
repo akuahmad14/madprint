@@ -202,21 +202,3 @@ Video menjelaskan identitas dan peran anggota, tujuan serta fitur aplikasi, demo
 **GitHub:** https://github.com/akuahmad14/madprint
 
 Pastikan repository dapat diakses dosen. Riwayat Git harus memuat sedikitnya lima commit yang bermakna. Jangan menyimpan password, API key rahasia, access token, atau kredensial lain di repository.
-
-## 10. Checklist Sebelum Pengumpulan
-
-- [ ] NIM dan identitas seluruh anggota sudah dilengkapi.
-- [ ] Source code dan petunjuk menjalankan aplikasi tersedia.
-- [ ] APK atau petunjuk build tersedia.
-- [x] Enam skenario UAT (UAT-01 sampai UAT-06) telah dilaksanakan dan dinyatakan PASS oleh penguji.
-- [x] Enam flow Maestro telah berhasil dieksekusi melalui Maestro Studio Desktop.
-- [ ] Assertion pada flow sesuai dengan elemen yang benar-benar tampil.
-- [ ] Screenshot dan log pengujian dapat dibuka.
-- [ ] Repository memiliki sedikitnya lima commit bermakna.
-- [ ] Tautan video 5–10 menit sudah diisi dan dapat diakses.
-- [ ] Tidak ada kredensial rahasia di repository.
-- [ ] Semua tautan dapat diakses dosen.
-
----
-
-Status pelaksanaan pada dokumen ini diperbarui berdasarkan konfirmasi penguji. Lampirkan screenshot, log, dan rekaman aktual pada folder bukti sebelum pengumpulan. Lengkapi NIM, tanggal, identitas perangkat, dan tautan video yang masih berupa placeholder.
