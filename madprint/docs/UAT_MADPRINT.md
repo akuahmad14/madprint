@@ -1,81 +1,157 @@
-# Laporan User Acceptance Testing (UAT) — MadPrint Mobile
+# Laporan User Acceptance Testing (UAT) — MADprint Mobile
 
-## 1. Informasi Pengujian
+## 1. Identitas Pengujian
 
 | Elemen | Keterangan |
 |---|---|
-| Aplikasi | MadPrint Mobile |
+| Nama aplikasi | MADprint Mobile |
+| Mata kuliah | Mobile Testing |
 | Platform | Android |
 | Peran yang diuji | Admin |
-| Metode | User Acceptance Testing (UAT) dan automation Maestro |
-| Status dokumen | Rencana pengujian; hasil aktual harus diisi setelah eksekusi |
-| Build aplikasi | Isi versi/build yang diuji |
-| Tanggal pengujian | Isi tanggal pelaksanaan |
-| Penguji | Isi nama penguji |
+| Metode | User Acceptance Testing (UAT) dan otomasi Maestro Studio |
+| Penguji | Ahmad Saifudin |
+| NIM / Kelas | [Lengkapi NIM] / TI23B |
+| Perangkat | [Isi model dan versi Android] |
+| Versi/build aplikasi | [Isi nomor build/versi] |
+| Tanggal pelaksanaan | [Isi tanggal] |
+| Status laporan | Template pelaksanaan; hasil aktual menunggu eksekusi dan bukti |
 
-## 2. Tujuan
+## 2. Tujuan dan Ruang Lingkup
 
-UAT dilakukan untuk menilai apakah fungsi utama MadPrint Mobile dapat digunakan oleh Admin sesuai kebutuhan operasional percetakan, khususnya autentikasi, pengelolaan pesanan, validasi input, akses detail, dan QR pesanan.
+UAT bertujuan menilai apakah fungsi utama MADprint Mobile dapat digunakan Admin sesuai kebutuhan operasional percetakan. Pengujian mencakup autentikasi, penolakan input tidak valid, validasi formulir pesanan, pembuatan pesanan, navigasi, dan tampilan QR pesanan.
 
-## 3. Persona dan Ruang Lingkup
+Pengujian dilakukan pada perangkat Android yang ditentukan di atas. Cakupan ini tidak mewakili audit keamanan menyeluruh, uji beban, atau kompatibilitas seluruh versi Android. Data yang digunakan harus berupa data dummy.
 
-Persona: Admin percetakan yang memiliki hak untuk masuk ke aplikasi, membuat dan mengubah pesanan, melihat harga, serta mengelola proses pesanan sesuai aturan aplikasi.
+## 3. Persona
 
-Ruang lingkup pengujian:
-- Login menggunakan akun Admin.
-- Penolakan kredensial login yang salah.
-- Validasi kolom wajib pada formulir pesanan.
-- Pembuatan dan pemeriksaan detail pesanan.
-- Navigasi menu utama.
-- Tampilan QR pesanan.
+**Admin percetakan** adalah pengguna yang memiliki hak akses untuk masuk ke aplikasi, melihat dashboard, mengelola pesanan, dan membuka detail/QR sesuai fungsi aplikasi.
 
-Di luar ruang lingkup: pengujian beban, audit keamanan menyeluruh, validasi seluruh kebijakan database Supabase, dan pengujian lintas seluruh versi Android.
+## 4. Prasyarat Umum
 
-## 4. Prasyarat
+1. Aplikasi MADprint sudah terpasang dan dapat dibuka.
+2. Perangkat Android memiliki koneksi internet.
+3. Layanan Supabase dan konfigurasi aplikasi tersedia.
+4. Akun Admin khusus pengujian aktif.
+5. Kredensial disimpan secara lokal dan tidak dimasukkan ke repository atau bukti visual.
+6. Maestro Studio Desktop telah terhubung ke perangkat untuk skenario otomatisasi.
+7. Data pelanggan dan pesanan yang digunakan merupakan data dummy.
 
-1. Aplikasi MadPrint terpasang pada perangkat Android.
-2. Perangkat terhubung ke internet dan layanan Supabase tersedia.
-3. Akun Admin aktif tersedia untuk pengujian.
-4. Kredensial uji disimpan secara lokal dan tidak dimasukkan ke repository.
-5. Untuk skenario pembuatan pesanan, gunakan data uji dan hindari data pelanggan nyata.
-6. Maestro CLI dan perangkat Android/ADB sudah siap.
+## 5. Skenario dan Kriteria Penerimaan
 
-## 5. Kriteria Penerimaan
+### UAT-01 — Login Admin dengan kredensial valid
 
-- Admin dapat masuk menggunakan kredensial valid dan melihat dashboard.
-- Kredensial salah tidak membuka dashboard dan aplikasi menampilkan pesan kesalahan.
-- Kolom wajib pada form pesanan menolak input kosong atau nilai tidak valid.
-- Admin dapat membuat pesanan dengan data valid dan melihat detail pesanan.
-- Menu utama dapat dibuka.
-- QR pesanan dapat ditampilkan pada halaman detail.
+| Elemen | Rincian |
+|---|---|
+| Tujuan | Memastikan Admin dapat mengakses aplikasi menggunakan akun aktif. |
+| Persona/role | Admin |
+| Prasyarat | Aplikasi terpasang; koneksi dan Supabase tersedia; akun Admin uji aktif. |
+| Kriteria penerimaan | Login berhasil dan halaman utama/dashboard Admin ditampilkan dengan navigasi yang sesuai. |
+| Langkah | 1. Buka aplikasi. 2. Masukkan email Admin uji. 3. Masukkan kata sandi yang benar. 4. Tekan **Masuk**. 5. Amati halaman setelah autentikasi. |
+| Hasil aktual | [Isi berdasarkan pengujian] |
+| Status | NOT RUN |
+| Bukti | `evidence/UAT-01-login-admin.png` |
 
-## 6. Skenario UAT
+### UAT-02 — Login ditolak untuk kredensial salah
 
-| ID | Skenario | Langkah ringkas | Hasil yang diharapkan | Hasil aktual | Status |
-|---|---|---|---|---|---|
-| UAT-01 | Login Admin valid | Buka aplikasi, isi email dan kata sandi valid, tekan Masuk | Dashboard Admin tampil dengan menu Home, Pesanan, Scan, Profil | Belum diuji | Belum diuji |
-| UAT-02 | Login gagal | Isi email valid dan kata sandi yang salah, tekan Masuk | Login ditolak; pesan kesalahan tampil; dashboard tidak terbuka | Belum diuji | Belum diuji |
-| UAT-03 | Validasi form kosong | Login Admin, buka Pesanan Baru, tekan tombol simpan tanpa mengisi kolom wajib | Pesan validasi tampil pada nama pelanggan, jenis cetakan, jumlah, dan harga | Belum diuji | Belum diuji |
-| UAT-04 | Membuat pesanan | Isi data pesanan valid dan tekan Buat pesanan & SPK | Pesanan tersimpan dan halaman detail pesanan terbuka | Belum diuji | Belum diuji |
-| UAT-05 | Navigasi menu | Dari dashboard, buka Home, Pesanan, Scan, dan Profil | Setiap menu menampilkan halaman sesuai fungsinya | Belum diuji | Belum diuji |
-| UAT-06 | Menampilkan QR pesanan | Buka detail pesanan dan tekan ikon Tampilkan QR | Dialog QR untuk nomor SPK terkait tampil | Belum diuji | Belum diuji |
+| Elemen | Rincian |
+|---|---|
+| Tujuan | Memastikan aplikasi tidak memberikan akses ketika kata sandi salah. |
+| Persona/role | Admin (penguji menggunakan akun uji) |
+| Prasyarat | Aplikasi terbuka; email akun uji valid; kata sandi salah yang tidak digunakan sebagai kredensial nyata. |
+| Kriteria penerimaan | Autentikasi ditolak, pesan kesalahan terlihat, dan dashboard tidak terbuka. |
+| Langkah | 1. Buka halaman login. 2. Masukkan email akun uji. 3. Masukkan kata sandi yang salah. 4. Tekan **Masuk**. 5. Amati pesan dan halaman. |
+| Hasil aktual | [Isi berdasarkan pengujian] |
+| Status | NOT RUN |
+| Bukti | `evidence/UAT-02-login-gagal.png` |
+
+### UAT-03 — Validasi format email
+
+| Elemen | Rincian |
+|---|---|
+| Tujuan | Memastikan format email yang tidak valid ditolak sebelum autentikasi. |
+| Persona/role | Admin (penguji) |
+| Prasyarat | Aplikasi berada pada halaman login. |
+| Kriteria penerimaan | Aplikasi menampilkan pesan validasi email dan tetap berada di halaman login. |
+| Langkah | 1. Masukkan teks yang bukan format email pada kolom Email. 2. Isi kata sandi dengan minimal enam karakter. 3. Tekan **Masuk**. 4. Periksa pesan validasi. |
+| Hasil aktual | [Isi berdasarkan pengujian] |
+| Status | NOT RUN |
+| Bukti | `evidence/UAT-03-validasi-email.png` |
+
+### UAT-04 — Validasi formulir pesanan kosong
+
+| Elemen | Rincian |
+|---|---|
+| Tujuan | Memastikan kolom wajib tidak dapat dikirim dalam keadaan kosong/tidak valid. |
+| Persona/role | Admin |
+| Prasyarat | Admin telah login dan membuka formulir **Pesanan Baru**. |
+| Kriteria penerimaan | Form tidak tersimpan dan pesan validasi tampil pada kolom wajib yang tidak valid. |
+| Langkah | 1. Buka menu **Pesanan**. 2. Pilih **Pesanan baru**. 3. Biarkan kolom wajib kosong. 4. Tekan **Buat pesanan & SPK**. 5. Catat pesan validasi yang tampil. |
+| Hasil aktual | [Isi berdasarkan pengujian] |
+| Status | NOT RUN |
+| Bukti | `evidence/UAT-04-validasi-pesanan.png` |
+
+### UAT-05 — Membuat pesanan dengan data valid
+
+| Elemen | Rincian |
+|---|---|
+| Tujuan | Memastikan Admin dapat membuat pesanan baru dengan data uji yang valid. |
+| Persona/role | Admin |
+| Prasyarat | Admin login; Supabase tersedia; formulir pesanan dapat dibuka; data uji unik disiapkan. |
+| Kriteria penerimaan | Data pesanan tersimpan dan halaman detail menampilkan pelanggan serta jenis cetakan yang dimasukkan. |
+| Langkah | 1. Buka **Pesanan**. 2. Pilih **Pesanan baru**. 3. Isi nama pelanggan dummy, nomor telepon uji, jenis cetakan, spesifikasi, jumlah, dan harga yang valid. 4. Tekan **Buat pesanan & SPK**. 5. Periksa halaman detail dan nomor SPK. |
+| Hasil aktual | [Isi nomor SPK dan hasil aktual] |
+| Status | NOT RUN |
+| Bukti | `evidence/UAT-05-buat-pesanan.png` |
+
+### UAT-06 — Navigasi menu Admin
+
+| Elemen | Rincian |
+|---|---|
+| Tujuan | Memastikan Admin dapat berpindah antar menu utama. |
+| Persona/role | Admin |
+| Prasyarat | Admin telah login dan dashboard tampil; izin kamera diberikan untuk membuka menu Scan. |
+| Kriteria penerimaan | Menu Home, Pesanan, Scan, dan Profil dapat dibuka dan menampilkan konten yang sesuai. |
+| Langkah | 1. Buka **Home**. 2. Buka **Pesanan**. 3. Buka **Scan** dan periksa tampilan pemindai. 4. Buka **Profil**. 5. Kembali ke **Home**. |
+| Hasil aktual | [Isi berdasarkan pengujian] |
+| Status | NOT RUN |
+| Bukti | `evidence/UAT-06-navigasi.png` |
+
+### UAT-07 — Menampilkan QR pesanan
+
+| Elemen | Rincian |
+|---|---|
+| Tujuan | Memastikan QR Code dapat ditampilkan untuk pesanan yang telah tersimpan. |
+| Persona/role | Admin |
+| Prasyarat | UAT-05 berhasil dan halaman detail pesanan terbuka. |
+| Kriteria penerimaan | Dialog QR tampil untuk pesanan yang dipilih dan dapat ditutup kembali. |
+| Langkah | 1. Buka detail pesanan yang dibuat pada UAT-05. 2. Tekan ikon/tombol **Tampilkan QR**. 3. Periksa QR pada dialog. 4. Tekan **Tutup**. |
+| Hasil aktual | [Isi berdasarkan pengujian] |
+| Status | NOT RUN |
+| Bukti | `evidence/UAT-07-qr-pesanan.png` |
+
+## 6. Rekapitulasi Hasil
+
+| Status | Jumlah |
+|---|---:|
+| PASS | 0 |
+| FAIL | 0 |
+| BLOCKED | 0 |
+| NOT RUN | 7 |
+
+Perbarui rekapitulasi setelah pelaksanaan. Status PASS hanya diberikan jika seluruh kriteria penerimaan terpenuhi dan bukti dapat diperiksa. Gunakan FAIL jika hasil aktual tidak sesuai kriteria, dan BLOCKED jika pengujian tidak dapat dilaksanakan karena prasyarat/lingkungan.
 
 ## 7. Bukti Pengujian
 
-Simpan screenshot/video hasil aktual ke folder `evidence/`. Gunakan penamaan konsisten, misalnya:
-- `UAT-01-login-admin.png`
-- `UAT-02-login-gagal.png`
-- `UAT-03-validasi-form.png`
-- `UAT-04-buat-pesanan.png`
-- `UAT-05-navigasi.png`
-- `UAT-06-qr-pesanan.png`
+Buat folder `madprint/docs/evidence/` dan simpan screenshot, rekaman, serta log hasil Maestro Studio di dalamnya. Pastikan setiap bukti:
+- berasal dari perangkat dan eksekusi yang benar-benar dilakukan;
+- menunjukkan bagian layar yang relevan dengan skenario;
+- diberi nama sesuai ID UAT;
+- tidak menampilkan password, token, atau data pelanggan nyata.
 
-Bukti harus berasal dari eksekusi nyata pada perangkat. Jangan mengisi status PASS sebelum hasil aktual dan bukti diperiksa.
+## 8. Kesimpulan
 
-## 8. Ringkasan dan Kesimpulan
+Kesimpulan penerimaan aplikasi belum dapat ditetapkan sebelum seluruh skenario dijalankan. Setelah pengujian, tuliskan jumlah PASS, FAIL, dan BLOCKED, jelaskan temuan penting, serta nyatakan apakah fungsi yang diuji memenuhi kriteria penerimaan.
 
-Jumlah skenario: 6. Jumlah PASS, FAIL, dan BLOCKED diisi setelah seluruh pengujian selesai. Kesimpulan penerimaan aplikasi dibuat berdasarkan hasil aktual, bukan hanya hasil yang diharapkan.
+## 9. Catatan
 
-## 9. Catatan Pelaksanaan
-
-Skenario Maestro menggunakan selector teks yang diambil dari label dan tombol pada source code aplikasi. Jika tampilan aktual berbeda, perbarui selector berdasarkan inspeksi perangkat. Skenario login dan pembuatan pesanan memerlukan akun Admin uji. Kredensial tidak boleh disimpan dalam file YAML, README, screenshot, atau commit.
+Dokumen ini merupakan instrumen dan template pencatatan UAT. Hasil aktual, status, screenshot, log, tanggal, dan identitas perangkat harus dilengkapi oleh penguji setelah pelaksanaan. Jangan mengubah status NOT RUN menjadi PASS tanpa bukti.
