@@ -189,7 +189,21 @@ Enam skenario yang telah diuji:
 - [Panduan pengujian Maestro](madprint/docs/MAESTRO_TESTING.md)
 - [Folder flow Maestro](madprint/.maestro/)
 
-Simpan screenshot atau rekaman hasil aktual pada folder dokumentasi, misalnya `madprint/docs/evidence/`. Gunakan nama berkas yang konsisten dengan ID skenario UAT. Sertakan log eksekusi Maestro yang relevan. Jangan mengunggah screenshot yang menampilkan password, token, atau data pribadi pelanggan.
+Penguji telah menyampaikan screenshot hasil pengujian dalam percakapan. Namun, gambar yang dikirim melalui chat tidak otomatis menjadi berkas di repository GitHub. Agar dosen dapat memeriksa bukti langsung dari repository, simpan/unggah berkas screenshot asli ke `madprint/docs/evidence/`, lalu commit dan push folder tersebut. Jangan membuat ulang atau mengganti bukti dengan gambar ilustrasi.
+
+### Daftar berkas bukti yang perlu ada di repository
+
+| Pengujian | Nama berkas yang disarankan |
+|---|---|
+| UAT-01 Login Admin | `UAT-01-login-admin.png` |
+| UAT-02 Login gagal | `UAT-02-login-gagal.png` |
+| UAT-03 Validasi email | `UAT-03-validasi-email.png` |
+| UAT-04 Validasi pesanan kosong | `UAT-04-validasi-pesanan.png` |
+| UAT-05 Membuat pesanan | `UAT-05-buat-pesanan.png` |
+| UAT-06 Navigasi Admin | `UAT-06-navigasi.png` |
+| Maestro 01–06 | Screenshot hasil tiap flow, gunakan awalan `01_` sampai `06_` |
+
+Sertakan log eksekusi Maestro yang relevan. Pastikan bukti memperlihatkan hasil yang mendukung kriteria penerimaan, tidak menampilkan password, token, atau data pribadi pelanggan, dan nama file sesuai dengan daftar di atas. Status pengujian pada tabel tetap mengacu pada hasil yang dikonfirmasi penguji; keberadaan file bukti di GitHub diperiksa secara terpisah.
 
 ## 8. Video Penjelasan
 
