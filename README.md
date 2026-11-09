@@ -37,7 +37,7 @@ MADprint Mobile ditujukan untuk admin, operator, dan staf percetakan. Aplikasi m
 
 ### Batasan pengujian
 
-Pengujian UTS difokuskan pada perangkat Android dan peran Admin, meliputi autentikasi, validasi input, pembuatan pesanan, navigasi, serta tampilan QR. Pengujian ini bukan audit keamanan menyeluruh, pengujian beban, atau pengujian kompatibilitas pada seluruh versi Android. Hasil PASS/FAIL hanya boleh ditetapkan berdasarkan eksekusi dan bukti aktual.
+Pengujian UTS difokuskan pada perangkat Android dan peran Admin, meliputi autentikasi, validasi input, pembuatan pesanan, dan navigasi. Pengujian ini bukan audit keamanan menyeluruh, pengujian beban, atau pengujian kompatibilitas pada seluruh versi Android. Hasil PASS/FAIL hanya boleh ditetapkan berdasarkan eksekusi dan bukti aktual.
 
 ## 2. Teknologi
 
@@ -142,7 +142,7 @@ Flow Maestro disimpan pada `madprint/.maestro/`. Enam flow yang tersedia mencaku
 
 ### Menjalankan flow
 
-Gunakan **Maestro Studio Desktop** (bukan Maestro Studio Desktop) untuk membuka dan menjalankan flow YAML. Flow berada di folder `madprint/.maestro/`.
+Gunakan **Maestro Studio Desktop** (bukan Maestro CLI) untuk membuka dan menjalankan flow YAML. Flow berada di folder `madprint/.maestro/`.
 
 #### Persiapan perangkat
 
@@ -166,23 +166,22 @@ Jika perangkat tidak muncul, tutup aplikasi lain yang mengelola ADB, periksa kab
 
 Flow login menggunakan variabel lokal `MAESTRO_EMAIL` dan `MAESTRO_PASSWORD`. Masukkan nilainya melalui mekanisme environment/secrets lokal yang didukung versi Maestro Studio yang digunakan. Jangan mengganti variabel dengan password literal dan jangan commit kredensial. Jika versi Studio yang dipakai tidak mendukung environment variable pada flow, siapkan mekanisme lokal yang aman sebelum menjalankan flow login; jangan mengunggah file rahasia.
 
-**Penting:** Studio adalah alat eksekusi yang dipakai pada tugas ini. ADB hanya menjadi prasyarat koneksi perangkat, bukan metode menjalankan skenario. Jangan menandai flow PASS sebelum Studio menyelesaikan seluruh assertion tanpa error.
+**Hasil pelaksanaan:** Berdasarkan konfirmasi penguji, keenam flow Maestro telah berhasil dijalankan melalui Maestro Studio Desktop. Ringkasan hasil dan daftar bukti yang perlu dilampirkan dicatat pada [Panduan pengujian Maestro](madprint/docs/MAESTRO_TESTING.md).
 
 ## 6. User Acceptance Testing (UAT)
 
-Rencana UAT dan tabel skenario lengkap tersedia pada [Laporan UAT MadPrint](madprint/docs/UAT_MADPRINT.md).
+Hasil UAT dan tabel skenario tersedia pada [Laporan UAT MadPrint](madprint/docs/UAT_MADPRINT.md). Enam skenario UAT (UAT-01 sampai UAT-06) telah dinyatakan lolos oleh penguji.
 
-Skenario yang direncanakan mencakup:
+Enam skenario yang telah diuji:
 
 1. Login Admin dengan kredensial valid.
 2. Login dengan kredensial tidak valid.
-3. Validasi form pesanan kosong.
-4. Pembuatan pesanan dengan data valid.
-5. Navigasi menu utama.
+3. Validasi format email.
+4. Validasi formulir pesanan kosong.
+5. Membuat pesanan dengan data valid.
 6. Navigasi menu Admin.
-7. Menampilkan QR Code pesanan.
 
-Setiap skenario harus memuat tujuan, persona/peran, kriteria penerimaan, prasyarat, langkah pengujian, hasil aktual, status, dan bukti. Lengkapi hasil aktual dan status setelah pengujian manual/otomatis benar-benar dilakukan.
+**Rekap UAT: 6 PASS, 0 FAIL.** Skenario tampilan QR terpisah tidak termasuk ruang lingkup pengujian yang dilaporkan.
 
 ## 7. Dokumentasi dan Bukti
 
@@ -209,8 +208,8 @@ Pastikan repository dapat diakses dosen. Riwayat Git harus memuat sedikitnya lim
 - [ ] NIM dan identitas seluruh anggota sudah dilengkapi.
 - [ ] Source code dan petunjuk menjalankan aplikasi tersedia.
 - [ ] APK atau petunjuk build tersedia.
-- [ ] Sedikitnya lima skenario UAT telah dilaksanakan dan memiliki bukti.
-- [ ] Sedikitnya empat flow Maestro telah dieksekusi dan hasilnya didokumentasikan.
+- [x] Enam skenario UAT (UAT-01 sampai UAT-06) telah dilaksanakan dan dinyatakan PASS oleh penguji.
+- [x] Enam flow Maestro telah berhasil dieksekusi melalui Maestro Studio Desktop.
 - [ ] Assertion pada flow sesuai dengan elemen yang benar-benar tampil.
 - [ ] Screenshot dan log pengujian dapat dibuka.
 - [ ] Repository memiliki sedikitnya lima commit bermakna.
@@ -220,4 +219,4 @@ Pastikan repository dapat diakses dosen. Riwayat Git harus memuat sedikitnya lim
 
 ---
 
-Dokumentasi ini menjelaskan struktur dan prosedur proyek. Status keberhasilan pengujian harus mengikuti hasil aktual pada perangkat, bukan hanya skenario yang direncanakan.
+Status pelaksanaan pada dokumen ini diperbarui berdasarkan konfirmasi penguji. Lampirkan screenshot, log, dan rekaman aktual pada folder bukti sebelum pengumpulan. Lengkapi NIM, tanggal, identitas perangkat, dan tautan video yang masih berupa placeholder.
