@@ -10,10 +10,10 @@
 | Peran yang diuji | Admin |
 | Metode | User Acceptance Testing (UAT) dan otomasi Maestro Studio |
 | Penguji | Ahmad Saifudin |
-| NIM / Kelas | [Lengkapi NIM] / TI23B |
-| Perangkat | [Lengkapi model dan versi Android] |
-| Versi/build aplikasi | [Lengkapi nomor build/versi] |
-| Tanggal pelaksanaan | [Lengkapi tanggal pelaksanaan] |
+| NIM / Kelas | 230103214 / TI23B |
+| Perangkat | Redmi Note 5 Pro Android 10 |
+| Versi/build aplikasi | version 0.1.0 |
+| Tanggal pelaksanaan | 9 November 2026 |
 | Status laporan | Pengujian selesai; 6 skenario dinyatakan PASS oleh penguji |
 
 ## 2. Tujuan dan Ruang Lingkup
@@ -49,7 +49,7 @@ Pengujian dilakukan pada perangkat Android yang ditentukan di atas. Cakupan ini 
 | Langkah | 1. Buka aplikasi. 2. Masukkan email Admin uji. 3. Masukkan kata sandi yang benar. 4. Tekan **Masuk**. 5. Amati halaman setelah autentikasi. |
 | Hasil aktual | Login Admin berhasil dan dashboard ditampilkan sesuai kriteria penerimaan (berdasarkan hasil pengujian penguji). |
 | Status | PASS |
-| Bukti | `evidence/UAT-01-login-admin.png` |
+| Bukti | `evidence/bukti UAT/UAT-01-login-admin.png` |
 
 ### UAT-02 — Login ditolak untuk kredensial salah
 
@@ -62,7 +62,7 @@ Pengujian dilakukan pada perangkat Android yang ditentukan di atas. Cakupan ini 
 | Langkah | 1. Buka halaman login. 2. Masukkan email akun uji. 3. Masukkan kata sandi yang salah. 4. Tekan **Masuk**. 5. Amati pesan dan halaman. |
 | Hasil aktual | Login ditolak untuk kredensial salah dan akses ke dashboard tidak diberikan (berdasarkan hasil pengujian penguji). |
 | Status | PASS |
-| Bukti | `evidence/UAT-02-login-gagal.png` |
+| Bukti | `evidence/bukti UAT/UAT-02-login-gagal.png` |
 
 ### UAT-03 — Validasi format email
 
@@ -75,7 +75,7 @@ Pengujian dilakukan pada perangkat Android yang ditentukan di atas. Cakupan ini 
 | Langkah | 1. Masukkan teks yang bukan format email pada kolom Email. 2. Isi kata sandi dengan minimal enam karakter. 3. Tekan **Masuk**. 4. Periksa pesan validasi. |
 | Hasil aktual | Validasi format email berjalan sesuai kriteria penerimaan (berdasarkan hasil pengujian penguji). |
 | Status | PASS |
-| Bukti | `evidence/UAT-03-validasi-email.png` |
+| Bukti | `evidence/bukti UAT/UAT-03-validasi-email.png` |
 
 ### UAT-04 — Validasi formulir pesanan kosong
 
@@ -88,7 +88,7 @@ Pengujian dilakukan pada perangkat Android yang ditentukan di atas. Cakupan ini 
 | Langkah | 1. Buka menu **Pesanan**. 2. Pilih **Pesanan baru**. 3. Biarkan kolom wajib kosong. 4. Tekan **Buat pesanan & SPK**. 5. Catat pesan validasi yang tampil. |
 | Hasil aktual | Form pesanan kosong ditolak dan validasi ditampilkan (berdasarkan hasil pengujian penguji). |
 | Status | PASS |
-| Bukti | `evidence/UAT-04-validasi-pesanan.png` |
+| Bukti | `evidence/bukti UAT/UAT-04-validasi-pesanan.png` |
 
 ### UAT-05 — Membuat pesanan dengan data valid
 
@@ -101,7 +101,7 @@ Pengujian dilakukan pada perangkat Android yang ditentukan di atas. Cakupan ini 
 | Langkah | 1. Buka **Pesanan**. 2. Pilih **Pesanan baru**. 3. Isi nama pelanggan dummy, nomor telepon uji, jenis cetakan, spesifikasi, jumlah, dan harga yang valid. 4. Tekan **Buat pesanan & SPK**. 5. Periksa halaman detail dan nomor SPK. |
 | Hasil aktual | Pesanan dengan data valid berhasil dibuat (berdasarkan hasil pengujian penguji). Nomor SPK: [Lengkapi jika diperlukan]. |
 | Status | PASS |
-| Bukti | `evidence/UAT-05-buat-pesanan.png` |
+| Bukti | `evidence/bukti UAT/UAT-05-buat-pesanan.png` |
 
 ### UAT-06 — Navigasi menu Admin
 
@@ -114,7 +114,7 @@ Pengujian dilakukan pada perangkat Android yang ditentukan di atas. Cakupan ini 
 | Langkah | 1. Buka **Home**. 2. Buka **Pesanan**. 3. Buka **Scan** dan periksa tampilan pemindai. 4. Buka **Profil**. 5. Kembali ke **Home**. |
 | Hasil aktual | Navigasi menu Admin berjalan sesuai kriteria penerimaan (berdasarkan hasil pengujian penguji). |
 | Status | PASS |
-| Bukti | `evidence/UAT-06-navigasi.png` |
+| Bukti | `evidence/bukti_UAT/UAT-06-navigasi.png` |
 
 ## 6. Rekapitulasi Hasil
 
@@ -129,11 +129,7 @@ Rekapitulasi di atas dicatat berdasarkan konfirmasi penguji bahwa UAT-01 sampai 
 
 ## 7. Bukti Pengujian
 
-Buat folder `madprint/docs/evidence/` dan simpan screenshot, rekaman, serta log hasil Maestro Studio di dalamnya. Pastikan setiap bukti:
-- berasal dari perangkat dan eksekusi yang benar-benar dilakukan;
-- menunjukkan bagian layar yang relevan dengan skenario;
-- diberi nama sesuai ID UAT;
-- tidak menampilkan password, token, atau data pelanggan nyata.
+Screenshot Bukti Pengujian UAT bisa dilihat di folder `madprint/docs/evidence/bukti_UAT`
 
 ## 8. Kesimpulan
 

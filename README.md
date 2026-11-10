@@ -188,27 +188,13 @@ Enam skenario yang telah diuji:
 - [Laporan UAT](madprint/docs/UAT_MADPRINT.md)
 - [Panduan pengujian Maestro](madprint/docs/MAESTRO_TESTING.md)
 - [Folder flow Maestro](madprint/.maestro/)
+- [Screenshot Bukti Maestro](madprint/docs/evidence/bukti_Maestro/)
+- [Screenshot Bukti UAT](madprint/docs/evidence/bukti_UAT/)
 
-Penguji telah menyampaikan screenshot hasil pengujian dalam percakapan. Namun, gambar yang dikirim melalui chat tidak otomatis menjadi berkas di repository GitHub. Agar dosen dapat memeriksa bukti langsung dari repository, simpan/unggah berkas screenshot asli ke `madprint/docs/evidence/`, lalu commit dan push folder tersebut. Jangan membuat ulang atau mengganti bukti dengan gambar ilustrasi.
+## 8. Video Penjelasan dan File APK
 
-### Daftar berkas bukti yang perlu ada di repository
-
-| Pengujian | Nama berkas yang disarankan |
-|---|---|
-| UAT-01 Login Admin | `UAT-01-login-admin.png` |
-| UAT-02 Login gagal | `UAT-02-login-gagal.png` |
-| UAT-03 Validasi email | `UAT-03-validasi-email.png` |
-| UAT-04 Validasi pesanan kosong | `UAT-04-validasi-pesanan.png` |
-| UAT-05 Membuat pesanan | `UAT-05-buat-pesanan.png` |
-| UAT-06 Navigasi Admin | `UAT-06-navigasi.png` |
-| Maestro 01–06 | Screenshot hasil tiap flow, gunakan awalan `01_` sampai `06_` |
-
-Sertakan log eksekusi Maestro yang relevan. Pastikan bukti memperlihatkan hasil yang mendukung kriteria penerimaan, tidak menampilkan password, token, atau data pribadi pelanggan, dan nama file sesuai dengan daftar di atas. Status pengujian pada tabel tetap mengacu pada hasil yang dikonfirmasi penguji; keberadaan file bukti di GitHub diperiksa secara terpisah.
-
-## 8. Video Penjelasan
-
-**Tautan video:** [Isi tautan video penjelasan berdurasi 5–10 menit]
-
+**Tautan video:** https://drive.google.com/file/d/1kOQTRP3ULojsL3lJQfQidhD2RGq7acKd/view?usp=sharing
+**Tautan APK:** https://drive.google.com/file/d/1qHMQkPEHC6L0YgRHwDOulvQY7bvN7eBk/view?usp=sharing
 Video menjelaskan identitas dan peran anggota, tujuan serta fitur aplikasi, demonstrasi alur utama, pelaksanaan UAT, eksekusi flow Maestro, hasil pengujian, dan temuan/batasan yang diketahui.
 
 ## 9. Repository

@@ -65,18 +65,7 @@ Flow login menggunakan placeholder `${MAESTRO_EMAIL}` dan `${MAESTRO_PASSWORD}`.
 
 ## 6. Bukti dan pencatatan hasil
 
-Simpan bukti dengan nama yang konsisten, misalnya:
-
-| Flow | Bukti yang diharapkan |
-|---|---|
-| 01 | `01_login_screen.png` |
-| 02 | `02_admin_dashboard.png` |
-| 03 | `03_order_form_validation.png` |
-| 04 | `04_order_created.png` |
-| 05 | `05_scan_screen.png`, `05_admin_profile.png`, `05_admin_home.png` |
-| 06 | `06_login_validation_error.png` |
-
-Bukti harus berasal dari eksekusi nyata. Catat tanggal, perangkat, versi/build aplikasi, nama flow, hasil PASS/FAIL, dan catatan error. Jangan membuat atau mengisi bukti seolah-olah flow sudah dijalankan.
+Screenshot Bukti Pengujian Maestro bisa dilihat di folder `madprint/docs/evidence/bukti_Maestro`
 
 ## 7. Hasil Pelaksanaan
 
@@ -90,8 +79,6 @@ Berdasarkan konfirmasi penguji, seluruh enam flow pada tabel bagian 2 telah berh
 | `04_create_order.yaml` | PASS |
 | `05_navigation_admin.yaml` | PASS |
 | `06_login_validation.yaml` | PASS |
-
-**Rekapitulasi: 6 PASS, 0 FAIL.** Lampirkan screenshot/log aktual dari Maestro Studio untuk setiap flow pada `madprint/docs/evidence/`. Lengkapi tanggal pengujian, perangkat, dan versi aplikasi. Nama bukti pada tabel bagian 6 merupakan contoh penamaan, bukan file bukti yang otomatis dibuat oleh dokumen ini.
 
 ## 8. Troubleshooting
 
