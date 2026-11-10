@@ -194,7 +194,9 @@ Enam skenario yang telah diuji:
 ## 8. Video Penjelasan dan File APK
 
 **Tautan video:** https://drive.google.com/file/d/1kOQTRP3ULojsL3lJQfQidhD2RGq7acKd/view?usp=sharing
+
 **Tautan APK:** https://drive.google.com/file/d/1qHMQkPEHC6L0YgRHwDOulvQY7bvN7eBk/view?usp=sharing
+
 Video menjelaskan identitas dan peran anggota, tujuan serta fitur aplikasi, demonstrasi alur utama, pelaksanaan UAT, eksekusi flow Maestro, hasil pengujian, dan temuan/batasan yang diketahui.
 
 ## 9. Repository
